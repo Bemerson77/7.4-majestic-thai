@@ -1,0 +1,242 @@
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+%header-nav-height {
+  height: 80px;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background: linear-gradient(
+      rgba(33, 37, 43, 0.97),
+      rgba(33, 37, 43, 0.97)), url('../images/thai-bg.jpg') fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Lato', sans-serif;
+
+}
+
+// HEADER NAV
+
+.nav-bar {
+  background-color: rgba(33, 37, 43, 1);
+  height: 80px;
+}
+
+.nav-bar-inner {
+  @extend %header-nav-height;
+}
+
+.nav-bar-row {
+  @extend %header-nav-height;
+}
+
+.page-nav {
+    @extend %header-nav-height;
+}
+
+.page-nav-link {
+  display: inline-block;
+  @extend %header-nav-height;
+  margin-right: 10px;
+
+}
+
+.page-nav-link a {
+  color: rgba(142, 146, 152, 1);
+  text-decoration: none;
+  font-size: 25px;
+  line-height: 80px;
+}
+
+.nav-header-logo {
+  margin-top: 30px;
+  text-align: center;
+  @extend %header-nav-height;
+}
+
+.nav-header-logo h1 {
+  color: rgba(142, 146, 152, 1);
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.social-nav {
+  @extend %header-nav-height;
+}
+
+.social-nav-link {
+  list-style: none;
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+  @extend %header-nav-height;
+
+}
+
+.social-nav-link a {
+  font-size: 30px;
+  color: rgba(142, 146, 152, 1);
+  text-decoration: none;
+  line-height: 80px;
+}
+
+// MAIN HEADER
+
+.main-header {
+  height: 500px;
+}
+
+.main-header-inner {
+  height: 500px;
+}
+
+.main-title {
+  font-size: 120px;
+  margin-top: 125px;
+}
+
+.sub-titles {
+  list-style: none;
+  margin-top: 40px;
+  padding: 0;
+}
+
+.sub-title {
+  font-size: 30px;
+
+
+}
+
+// PAGE BODY
+
+.page-body {
+  background-color: rgba(0, 45, 49, 1);
+  height: 700px;
+
+}
+
+// owner
+
+.owner-pic {
+  margin-top: 60px;
+}
+
+.owner-title {
+  font-size: 50px;
+}
+
+.owner-descript {
+  margin-top: 20px;
+}
+
+.owner-descript p {
+  line-height: 30px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+// menu
+
+.menu-title h1 {
+  font-size: 50px;
+}
+
+.menu-items {
+  list-style: none;
+}
+
+
+
+// PAGE FOOTER
+
+.page-footer {
+  height: 320px;
+  color: rgba(142, 146, 152, 1);
+
+}
+
+.footer {
+  padding: 40px 0 0 0;
+  height: 300px;
+
+}
+
+
+
+.footer-nav-items {
+  padding: 0;
+  margin-top: 20px;
+
+}
+
+.footer-nav-item {
+  list-style: none;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.footer-nav-item a {
+  color: white;
+  font-size: 15px;
+}
+
+.subscribe {
+  padding: 0;
+}
+
+.subscribe-content {
+  margin-top: 20px;
+}
+
+.subscribe-input {
+  width: 40%;
+}
+
+.subscribe-button {
+  background-color: rgba(62, 92, 95, 1);
+  border: 1px solid rgba(0, 45, 49, 1);
+}
+
+.mj-email {
+  display: inline-block;
+}
+
+.footer-social-nav {
+  float: right;
+  display: inline-block;
+}
+
+.footer-social-nav-link {
+  display: inline-block;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.sub-footer {
+  margin-top: 50px;
+  padding-top: 50px;
+  border-top: 1px solid rgba(142, 146, 152, 1);
+}
+
+.sub-footer a {
+  color: white;
+  text-decoration: none;
+}
