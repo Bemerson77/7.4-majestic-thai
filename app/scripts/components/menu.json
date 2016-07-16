@@ -1,71 +1,97 @@
 [
   {
+    "id": 100,
     "item": "Spring Rolls",
     "description": "Crisp vegetarian spring rolls, thai sweet and sour sauce.",
     "price": 5000,
-    "category": "Appetizers"
+    "category": "appetizers"
   },
 
   {
+    "id": 101,
     "item": "Chicken Sa Tay",
     "description": "Sliced chicken breast marinated in a misture of Thai sauce.",
     "price": 6000,
-    "category": "Appetizers"
+    "category": "appetizers"
   },
 
   {
+    "id": 102,
     "item": "Yin Yang",
     "description": "Crisp wontons filled with cream cheese.",
     "price": 8000,
-    "category": "Appetizers"
+    "category": "appetizers"
   },
 
   {
+    "id": 103,
     "item": "Crisp Calamari",
     "description": "Specially seasoned battered-fried calamari.",
     "price": 3000,
-    "category": "Appetizers"
+    "category": "appetizers"
   },
 
   {
+    "id": 104,
     "item": "Famous Pad Thai",
     "description": "Choice of chicken or pork stir-fried with rice noodles.",
     "price": 3000,
-    "category": "Entree"
+    "category": "entree"
   },
 
   {
+    "id": 105,
     "item": "Thai Fried Rice",
     "description": "Chicken or Beef stir-fried with jasmine rice.",
     "price": 3000,
-    "category": "Entree"
+    "category": "entree"
   },
 
   {
+    "id": 106,
     "item": "Soft Shell Crab",
     "description": "Golden-fried soft shell crabs.",
     "price": 3000,
-    "category": "Entree"
+    "category": "entree"
   },
 
   {
+    "id": 107,
     "item": "Siam Catfish",
     "description": "Specially seasoned battered-fried calamari.",
     "price": 3000,
-    "category": "Entree"
+    "category": "entree"
   },
 
   {
+    "id": 108,
     "item": "Sticky Rice",
     "description": "Really sticky rice.",
     "price": 3000,
-    "category": "Dessert"
+    "category": "dessert"
   },
 
   {
+    "id": 109,
     "item": "Green Tea Ice Cream",
     "description": "Really cold green tea ice-cream, mmmmmmm.",
     "price": 3000,
-    "category": "Dessert"
+    "category": "dessert"
+  },
+
+  {
+    "id": 110,
+    "item": "Fried Ice Cream",
+    "description": "We fry it in a frier!",
+    "price": 3000,
+    "category": "dessert"
+  },
+
+  {
+    "id": 111,
+    "item": "New York Cheese Cake",
+    "description": "It is from New York!",
+    "price": 3000,
+    "category": "dessert"
   }
 ]

@@ -10,10 +10,8 @@ var ReactDOM = require('react-dom');
 // local
 var Owner = require('./components/owner.jsx');
 var MenuComponent = require('./components/menu.jsx');
-// var Model = require('./models/menu-model');
-var menuItems = require('./components/menu.json');
-
-
+var data = require('./components/menu.json');
+var menuData = require('./models/menu-model.js');
 
 
 var Router = Backbone.Router.extend({
@@ -21,7 +19,9 @@ var Router = Backbone.Router.extend({
     '': 'home',
     'menu': 'menu'
   },
-
+  initialize: function(){
+    this.menuItems = new menuData.MenuCollection(data);
+  },
   home: function(){
     ReactDOM.render(
       React.createElement(Owner),
@@ -30,8 +30,9 @@ var Router = Backbone.Router.extend({
   },
 
   menu: function(){
+    var self = this;
     ReactDOM.render(
-      React.createElement(MenuComponent, {menuItems: menuItems}),
+      React.createElement(MenuComponent, {router: self}),
       document.getElementById('content')
     );
   }

@@ -1,22 +1,22 @@
-/* MENU MODEL */
+/* ORDER MODEL */
 
 // 3rd party
 var Backbone = require('backbone');
 var $ = require('jquery');
 
 
-var MenuModel = Backbone.Model.extend({
+var OrderModel = Backbone.Model.extend({
   idAttribute: 'cid'
 });
 
-var MenuCollection = Backbone.Collection.extend({
-  model: MenuModel
+var OrderCollection = Backbone.Collection.extend({
+  model: OrderModel
   // url: 'http://tiny-lasagna-server.herokuapp.com/collections/brandonmenu';
 });
 
 
 
 module.exports = {
-  MenuModel: MenuModel,
-  MenuCollection: MenuCollection
+  OrderModel: OrderModel,
+  OrderCollection: OrderCollection
 };
