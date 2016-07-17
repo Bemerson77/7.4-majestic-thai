@@ -12,6 +12,7 @@ var Owner = require('./components/owner.jsx');
 var MenuComponent = require('./components/menu.jsx');
 var data = require('./components/menu.json');
 var menuData = require('./models/menu-model.js');
+var orderData = require('./models/order.js');
 
 
 var Router = Backbone.Router.extend({
@@ -21,6 +22,7 @@ var Router = Backbone.Router.extend({
   },
   initialize: function(){
     this.menuItems = new menuData.MenuCollection(data);
+    this.order = new orderData.OrderCollection();
   },
   home: function(){
     ReactDOM.render(

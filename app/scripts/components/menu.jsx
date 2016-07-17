@@ -20,7 +20,8 @@ var MenuComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   getIntitialState: function(){
     return {
-      menuItems: this.props.router.menuItems
+      menuItems: this.props.router.menuItems,
+      orderedItems: []
     }
   },
   componentWillMount: function(){
@@ -28,8 +29,21 @@ var MenuComponent = React.createClass({
     var menuItems = self.props.router.menuItems;
     self.setState({menuItems: menuItems});
   },
+  handleOrderAdd: function(){
+    var self = this;
+    var order = self.props.router.order;
+    console.log(menuItems);
+  },
   render: function(){
     var menuItems = this.state.menuItems;
+
+    var categories = menuItems.groupBy(function(data){
+      return data.get('category');
+    });
+
+    var appetizers = categories.appetizers;
+    var entree = categories.entree;
+    var dessert = categories.dessert;
 
     return (
       <div>
@@ -39,19 +53,19 @@ var MenuComponent = React.createClass({
         <ul className="menu-items appetizers col-xs-4">
           <h2 className="menu-item-cat">Appetizer</h2>
 
-          <AppetizerComponent menuItems={menuItems}/>
+          <AppetizerComponent appetizers={appetizers}/>
 
         </ul>
         <ul className="menu-items entree col-xs-4">
           <h2 className="menu-item-cat">Entree</h2>
 
-          <EntreeComponent menuItems={menuItems}/>
+          <EntreeComponent entree={entree}/>
 
         </ul>
         <ul className="menu-items dessert col-xs-4">
           <h2 className="menu-item-cat">Dessert</h2>
 
-          <DessertComponent menuItems={menuItems}/>
+          <DessertComponent dessert={dessert}/>
 
         </ul>
       </div>
@@ -61,23 +75,24 @@ var MenuComponent = React.createClass({
 
 
 var AppetizerComponent = React.createClass({
+  getIntitialState: function(){
+    return {
+      item: '',
+      desrcription: '',
+      price: ''
+    }
+  },
   render: function(){
-    var menuItems = this.props.menuItems;
+    var appetizers = this.props.appetizers;
 
-    var categories = menuItems.groupBy(function(data){
-      return data.get('category');
-    });
-
-    var appetizers = categories.appetizers;
-    console.log(categories);
     var appetizerList = appetizers.map(function(data){
-      console.log(data);
+
       return (
         <li key={data.cid} className="menu-item">
           <h3 className="menu-item-title">{data.get('item')}</h3>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <input className="subscribe-button" type="submit" name="item" value="Add"/>
+          <button className="subscribe-button">Add</button>
         </li>
       )
     });
@@ -93,13 +108,9 @@ var AppetizerComponent = React.createClass({
 
 var EntreeComponent = React.createClass({
   render: function(){
-    var menuItems = this.props.menuItems;
 
-    var categories = menuItems.groupBy(function(data){
-      return data.get('category');
-    });
 
-    var entree = categories.entree;
+    var entree = this.props.entree;
 
     var entreeList = entree.map(function(data){
 
@@ -108,7 +119,7 @@ var EntreeComponent = React.createClass({
           <h3 className="menu-item-title">{data.get('item')}</h3>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <input className="subscribe-button" type="submit" name="item" value="Add"/>
+          <button className="subscribe-button">Add</button>
         </li>
       )
     });
@@ -124,13 +135,9 @@ var EntreeComponent = React.createClass({
 
 var DessertComponent = React.createClass({
   render: function(){
-    var menuItems = this.props.menuItems;
 
-    var categories = menuItems.groupBy(function(data){
-      return data.get('category');
-    });
 
-    var dessert = categories.dessert;
+    var dessert = this.props.dessert;
 
     var dessertList = dessert.map(function(data){
 
@@ -139,7 +146,7 @@ var DessertComponent = React.createClass({
           <h3 className="menu-item-title">{data.get('item')}</h3>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <input className="subscribe-button" type="submit" name="item" value="Add"/>
+          <button className="subscribe-button">Add</button>
         </li>
       )
     });
