@@ -11,7 +11,7 @@ require('backbone-react-component');
 
 
 // local
-
+var OrderComponent = require('./order.jsx');
 
 
 
@@ -52,24 +52,27 @@ var MenuComponent = React.createClass({
         <div className="menu-title text-center">
           <h1>Menu</h1>
         </div>
-        <ul className="menu-items appetizers col-xs-4">
+        <ul className="menu-items appetizers col-xs-3">
           <h2 className="menu-item-cat">Appetizer</h2>
 
           <AppetizerComponent appetizers={appetizers} onClick={this.handleClick}/>
 
         </ul>
-        <ul className="menu-items entree col-xs-4">
+        <ul className="menu-items entree col-xs-3">
           <h2 className="menu-item-cat">Entree</h2>
 
           <EntreeComponent entree={entree} onClick={this.handleClick}/>
 
         </ul>
-        <ul className="menu-items dessert col-xs-4">
+        <ul className="menu-items dessert col-xs-3">
           <h2 className="menu-item-cat">Dessert</h2>
 
           <DessertComponent dessert={dessert} onClick={this.handleClick}/>
 
         </ul>
+
+          <OrderComponent />
+          
       </div>
     )
   }
