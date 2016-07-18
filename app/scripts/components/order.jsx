@@ -28,6 +28,10 @@ var OrderComponent = React.createClass({
     orderedItems.on('add', self.update);
 
   },
+  componentWillUnmount: function(){
+    var self = this;
+    self.state.orderedItems.off('add', self.update);
+  },
   update: function(){
     this.forceUpdate();
   },
