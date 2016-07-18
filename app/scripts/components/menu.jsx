@@ -28,11 +28,13 @@ var MenuComponent = React.createClass({
     var self = this;
     var menuItems = self.props.router.menuItems;
     self.setState({menuItems: menuItems});
+
   },
-  handleOrderAdd: function(){
+  handleClick: function(data){
     var self = this;
-    var order = self.props.router.order;
-    console.log(menuItems);
+    self.props.router.order.add(data);
+    self.forceUpdate();
+
   },
   render: function(){
     var menuItems = this.state.menuItems;
@@ -53,19 +55,19 @@ var MenuComponent = React.createClass({
         <ul className="menu-items appetizers col-xs-4">
           <h2 className="menu-item-cat">Appetizer</h2>
 
-          <AppetizerComponent appetizers={appetizers}/>
+          <AppetizerComponent appetizers={appetizers} onClick={this.handleClick}/>
 
         </ul>
         <ul className="menu-items entree col-xs-4">
           <h2 className="menu-item-cat">Entree</h2>
 
-          <EntreeComponent entree={entree}/>
+          <EntreeComponent entree={entree} onClick={this.handleClick}/>
 
         </ul>
         <ul className="menu-items dessert col-xs-4">
           <h2 className="menu-item-cat">Dessert</h2>
 
-          <DessertComponent dessert={dessert}/>
+          <DessertComponent dessert={dessert} onClick={this.handleClick}/>
 
         </ul>
       </div>
@@ -75,27 +77,26 @@ var MenuComponent = React.createClass({
 
 
 var AppetizerComponent = React.createClass({
-  getIntitialState: function(){
-    return {
-      item: '',
-      desrcription: '',
-      price: ''
-    }
+  handleClick: function(data, e){
+    e.preventDefault();
+    this.props.onClick(data.attributes);
+
   },
   render: function(){
     var appetizers = this.props.appetizers;
 
     var appetizerList = appetizers.map(function(data){
+      var bindDataToClick = this.handleClick.bind(this, data);
 
       return (
         <li key={data.cid} className="menu-item">
           <h3 className="menu-item-title">{data.get('item')}</h3>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button">Add</button>
+          <button className="subscribe-button" onClick={bindDataToClick}>Add</button>
         </li>
       )
-    });
+    }.bind(this));
 
 
     return (
@@ -107,22 +108,28 @@ var AppetizerComponent = React.createClass({
 });
 
 var EntreeComponent = React.createClass({
+  handleClick: function(data, e){
+    e.preventDefault();
+    this.props.onClick(data.attributes);
+
+  },
   render: function(){
 
 
     var entree = this.props.entree;
 
     var entreeList = entree.map(function(data){
+      var bindDataToClick = this.handleClick.bind(this, data);
 
       return (
         <li key={data.cid} className="menu-item">
           <h3 className="menu-item-title">{data.get('item')}</h3>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button">Add</button>
+          <button className="subscribe-button" onClick={bindDataToClick}>Add</button>
         </li>
       )
-    });
+    }.bind(this));
 
 
     return (
@@ -134,22 +141,28 @@ var EntreeComponent = React.createClass({
 });
 
 var DessertComponent = React.createClass({
+  handleClick: function(data, e){
+    e.preventDefault();
+    this.props.onClick(data.attributes);
+
+  },
   render: function(){
 
 
     var dessert = this.props.dessert;
 
     var dessertList = dessert.map(function(data){
+      var bindDataToClick = this.handleClick.bind(this, data);
 
       return (
         <li key={data.cid} className="menu-item">
           <h3 className="menu-item-title">{data.get('item')}</h3>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button">Add</button>
+          <button className="subscribe-button" onClick={bindDataToClick}>Add</button>
         </li>
       )
-    });
+    }.bind(this));
 
 
     return (
