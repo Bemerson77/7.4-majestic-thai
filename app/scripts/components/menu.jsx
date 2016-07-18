@@ -21,7 +21,6 @@ var MenuComponent = React.createClass({
   getIntitialState: function(){
     return {
       menuItems: this.props.router.menuItems,
-      orderedItems: []
     }
   },
   componentWillMount: function(){
@@ -33,8 +32,6 @@ var MenuComponent = React.createClass({
   handleClick: function(data){
     var self = this;
     self.props.router.order.add(data);
-    self.forceUpdate();
-
   },
   render: function(){
     var menuItems = this.state.menuItems;
@@ -71,8 +68,8 @@ var MenuComponent = React.createClass({
 
         </ul>
 
-          <OrderComponent />
-          
+          <OrderComponent order={this.props.router.order}/>
+
       </div>
     )
   }

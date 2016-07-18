@@ -25,6 +25,8 @@ var Router = Backbone.Router.extend({
     this.order = new orderData.OrderCollection();
   },
   home: function(){
+    ReactDOM.unmountComponentAtNode(document.getElementById('content'));
+
     ReactDOM.render(
       React.createElement(Owner),
       document.getElementById('content')
@@ -33,6 +35,8 @@ var Router = Backbone.Router.extend({
 
   menu: function(){
     var self = this;
+    ReactDOM.unmountComponentAtNode(document.getElementById('content'));
+
     ReactDOM.render(
       React.createElement(MenuComponent, {router: self}),
       document.getElementById('content')
