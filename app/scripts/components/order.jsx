@@ -35,20 +35,30 @@ var OrderComponent = React.createClass({
   update: function(){
     this.forceUpdate();
   },
+	handleDelete: function(data, e){
+  	e.preventDefault();
+		var orderedItems = this.props.order;
+		orderedItems.remove(data);
+		this.setState({orderedItems: orderedItems});
+
+
+	},
   render: function(){
     console.log('orderedState', this.state.orderedItems);
     var orderedItems = this.state.orderedItems;
 
     var orderedList = orderedItems.map(function(data){
+			var boundItemToClick = this.handleDelete.bind(this, data);
 
       return (
         <li key={data.cid}>
           <h3 className="menu-item-title order-item-title">{data.get('item')}</h3>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button">x</button>
+          <button className="subscribe-button" onClick={boundItemToClick}><i className="fa fa-times-circle" aria-hidden="true"></i>
+					</button>
         </li>
       )
-    });
+    }.bind(this));
     return (
       <div className="row order-outer">
 				<h2 className="text-center">Order Cart</h2>
