@@ -57,11 +57,9 @@ var OrderComponent = React.createClass({
 					{orderedList}
 
         </ul>
-				<div className="checkout-nav-outer">
-					<div className="checkout-wrapper">
-						<button className="subscribe-button checkout-btn">Cancel</button>
-						<button className="subscribe-button checkout-btn">Check Out</button>
-					</div>
+				<div className="checkout-wrapper">
+					<button className="subscribe-button checkout-btn">Cancel</button>
+					<button className="subscribe-button checkout-btn">Check Out</button>
 				</div>
       </div>
     )
