@@ -129,7 +129,7 @@ body {
 
 .page-body {
   background-color: rgba(0, 45, 49, 1);
-  height: 700px;
+  min-height: 700px;
 
 }
 
@@ -164,11 +164,23 @@ body {
 }
 
 
+
 // order view
+
+.order-outer {
+  border: 2px solid rgba(0, 60, 65, 1);
+  margin-right: 10px;
+
+}
 
 .order-item-title {
   margin: 0;
   display: inline-block;
+}
+
+.checkout-wrapper {
+  display: inline-block;
+  float: right;
 }
 
 

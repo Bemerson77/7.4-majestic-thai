@@ -49,27 +49,36 @@ var MenuComponent = React.createClass({
         <div className="menu-title text-center">
           <h1>Menu</h1>
         </div>
-        <ul className="menu-items appetizers col-xs-3">
-          <h2 className="menu-item-cat">Appetizer</h2>
+				<div className="row">
+					<div className="col-md-8">
+						<div className="row">
+							<div className="menu-wrapper">
+								<ul className="menu-items appetizers col-md-4">
+									<h2 className="menu-item-cat">Appetizer</h2>
 
-          <AppetizerComponent appetizers={appetizers} onClick={this.handleClick}/>
+									<AppetizerComponent appetizers={appetizers} onClick={this.handleClick}/>
 
-        </ul>
-        <ul className="menu-items entree col-xs-3">
-          <h2 className="menu-item-cat">Entree</h2>
+								</ul>
+								<ul className="menu-items entree col-md-4">
+									<h2 className="menu-item-cat">Entree</h2>
 
-          <EntreeComponent entree={entree} onClick={this.handleClick}/>
+									<EntreeComponent entree={entree} onClick={this.handleClick}/>
 
-        </ul>
-        <ul className="menu-items dessert col-xs-3">
-          <h2 className="menu-item-cat">Dessert</h2>
+								</ul>
+								<ul className="menu-items dessert col-md-4">
+									<h2 className="menu-item-cat">Dessert</h2>
 
-          <DessertComponent dessert={dessert} onClick={this.handleClick}/>
+									<DessertComponent dessert={dessert} onClick={this.handleClick}/>
 
-        </ul>
+								</ul>
+							</div>
+						</div>
+					</div>
 
+				<div className="col-md-4">
           <OrderComponent order={this.props.router.order}/>
-
+				</div>
+				</div>
       </div>
     )
   }

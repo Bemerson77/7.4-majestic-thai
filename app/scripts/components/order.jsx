@@ -50,13 +50,19 @@ var OrderComponent = React.createClass({
       )
     });
     return (
-      <div>
-        <ul className="menu-items appetizers col-xs-3">
-          <h2 className="menu-item-cat">Order Cart</h2>
+      <div className="row order-outer">
+				<h2 className="text-center">Order Cart</h2>
+        <ul className="menu-items appetizers col-xs-12">
 
-            {orderedList}
+					{orderedList}
 
         </ul>
+				<div className="checkout-nav-outer">
+					<div className="checkout-wrapper">
+						<button className="subscribe-button checkout-btn">Cancel</button>
+						<button className="subscribe-button checkout-btn">Check Out</button>
+					</div>
+				</div>
       </div>
     )
   }
