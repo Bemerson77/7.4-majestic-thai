@@ -178,10 +178,21 @@ body {
   display: inline-block;
 }
 
+.ordered-item {
+  padding: 5px 0 5px 0;
+  border-top: 1px solid rgba(0, 60, 65, 1);
+}
+
 .checkout-wrapper {
   display: inline-block;
   float: right;
 }
+
+.delete-btn {
+  float: right;
+}
+
+
 
 
 // PAGE FOOTER

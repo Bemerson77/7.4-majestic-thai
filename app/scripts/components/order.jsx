@@ -51,10 +51,10 @@ var OrderComponent = React.createClass({
 			var boundItemToClick = this.handleDelete.bind(this, data);
 
       return (
-        <li key={data.cid}>
+        <li className="ordered-item" key={data.cid}>
           <h3 className="menu-item-title order-item-title">{data.get('item')}</h3>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button" onClick={boundItemToClick}><i className="fa fa-times-circle" aria-hidden="true"></i>
+          <button className="subscribe-button delete-btn" onClick={boundItemToClick}><i className="fa fa-times-circle" aria-hidden="true"></i>
 					</button>
         </li>
       )
