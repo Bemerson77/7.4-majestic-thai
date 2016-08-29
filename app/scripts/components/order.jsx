@@ -40,9 +40,8 @@ var OrderComponent = React.createClass({
 		var orderedItems = this.props.order;
 		orderedItems.remove(data);
 		this.setState({orderedItems: orderedItems});
-
-
 	},
+  
   render: function(){
 
     var orderedItems = this.state.orderedItems;
