@@ -169,7 +169,7 @@ body {
 
 .order-outer {
   border: 2px solid rgba(0, 60, 65, 1);
-  margin-right: 10px;
+  margin: 5px 5px 0 5px;
 
 }
 
@@ -183,13 +183,23 @@ body {
   border-top: 1px solid rgba(0, 60, 65, 1);
 }
 
-.checkout-wrapper {
+.order-item-price {
+  float: right;
+}
+
+.checkout-btn-wrapper {
   display: inline-block;
   float: right;
+
 }
 
 .delete-btn {
   float: right;
+}
+
+.ordered-items-wrapper {
+  list-style: none;
+  margin-bottom: 0;
 }
 
 

@@ -49,7 +49,7 @@ var MenuComponent = React.createClass({
         <div className="menu-title text-center">
           <h1>Menu</h1>
         </div>
-				<div className="row">
+				<div className="row-fluid">
 					<div className="col-md-8">
 						<div className="row">
 							<div className="menu-wrapper">

@@ -44,7 +44,7 @@ var OrderComponent = React.createClass({
 
 	},
   render: function(){
-    console.log('orderedState', this.state.orderedItems);
+
     var orderedItems = this.state.orderedItems;
 
     var orderedList = orderedItems.map(function(data){
@@ -53,23 +53,29 @@ var OrderComponent = React.createClass({
       return (
         <li className="ordered-item" key={data.cid}>
           <h3 className="menu-item-title order-item-title">{data.get('item')}</h3>
-          <span className="menu-item-price">{data.get('price')}</span>
           <button className="subscribe-button delete-btn" onClick={boundItemToClick}><i className="fa fa-times-circle" aria-hidden="true"></i>
 					</button>
+          <span className="order-item-price">{data.get('price')}</span>
         </li>
       )
     }.bind(this));
     return (
       <div className="row order-outer">
 				<h2 className="text-center">Order Cart</h2>
-        <ul className="menu-items appetizers col-xs-12">
+        <ul className="ordered-items-wrapper col-xs-12">
 
 					{orderedList}
 
         </ul>
 				<div className="checkout-wrapper">
-					<button className="subscribe-button checkout-btn">Cancel</button>
-					<button className="subscribe-button checkout-btn">Check Out</button>
+          <span className="checkout-total-wrapper">
+            <span className="checkout-total-label">total&#58; $ </span>
+            <span className="checkout-total">30.00</span>
+          </span>
+          <div className="checkout-btn-wrapper">
+  					<button className="subscribe-button checkout-btn">Cancel</button>
+  					<button className="subscribe-button checkout-btn">Check Out</button>
+          </div>
 				</div>
       </div>
     )
