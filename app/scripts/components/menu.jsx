@@ -99,10 +99,13 @@ var AppetizerComponent = React.createClass({
 
       return (
         <li key={data.cid} className="menu-item">
-          <h3 className="menu-item-title">{data.get('item')}</h3>
+          <div>
+            <h3 className="menu-item-title">{data.get('item')}</h3>
+            <button className="menu-add-btn subscribe-button" onClick={bindDataToClick}>Add</button>
+          </div>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button" onClick={bindDataToClick}>Add</button>
+
         </li>
       )
     }.bind(this));
@@ -132,10 +135,13 @@ var EntreeComponent = React.createClass({
 
       return (
         <li key={data.cid} className="menu-item">
-          <h3 className="menu-item-title">{data.get('item')}</h3>
+          <div>
+            <h3 className="menu-item-title">{data.get('item')}</h3>
+            <button className="menu-add-btn subscribe-button" onClick={bindDataToClick}>Add</button>
+          </div>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button" onClick={bindDataToClick}>Add</button>
+
         </li>
       )
     }.bind(this));
@@ -165,10 +171,13 @@ var DessertComponent = React.createClass({
 
       return (
         <li key={data.cid} className="menu-item">
-          <h3 className="menu-item-title">{data.get('item')}</h3>
+          <div>
+            <h3 className="menu-item-title">{data.get('item')}</h3>
+            <button className="menu-add-btn subscribe-button" onClick={bindDataToClick}>Add</button>
+          </div>
           <p className="menu-item-descript">{data.get('description')}</p>
           <span className="menu-item-price">{data.get('price')}</span>
-          <button className="subscribe-button" onClick={bindDataToClick}>Add</button>
+          
         </li>
       )
     }.bind(this));

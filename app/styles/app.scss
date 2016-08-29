@@ -159,18 +159,30 @@ body {
   font-size: 50px;
 }
 
+.menu-item-title{
+  display: inline-block;
+  margin: 10px 0;
+}
+
 .menu-items {
   list-style: none;
 }
 
+.menu-add-btn {
+  float: right;
+  margin: 10px 0;
+}
 
+.menu-item-price {
+  font-size: 18px;
+}
 
 // order view
 
 .order-outer {
   border: 2px solid rgba(0, 60, 65, 1);
   margin: 5px 5px 0 5px;
-
+  padding-bottom: 5px;
 }
 
 .order-item-title {
@@ -185,24 +197,37 @@ body {
 
 .order-item-price {
   float: right;
+  margin-right: 10px;
+  line-height: 26px;
+}
+
+.checkout-wrapper {
+  padding: 0 15px 0 15px;
+
+  span {
+    font-size: 20px;
+  }
 }
 
 .checkout-btn-wrapper {
   display: inline-block;
   float: right;
-
+  margin-left: 15px;
 }
 
 .delete-btn {
   float: right;
+
+  &:hover {
+    color: rgba(187, 25, 22, 1);
+  }
 }
 
 .ordered-items-wrapper {
   list-style: none;
   margin-bottom: 0;
+  min-height: 300px;
 }
-
-
 
 
 // PAGE FOOTER
