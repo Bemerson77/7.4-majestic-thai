@@ -47,6 +47,8 @@ var OrderComponent = React.createClass({
 
     var orderedItems = this.state.orderedItems;
 
+    var prices = orderedItems.pluck('price');
+
     var orderedList = orderedItems.map(function(data){
 			var boundItemToClick = this.handleDelete.bind(this, data);
 
@@ -59,6 +61,13 @@ var OrderComponent = React.createClass({
         </li>
       )
     }.bind(this));
+
+    var total = _.reduce(prices, function(a, b){
+      console.log('a', a);
+      console.log('b', b);
+      return a + b;
+    },0).toFixed(2);
+
     return (
       <div className="row order-outer">
 				<h2 className="text-center">Order Cart</h2>
@@ -70,7 +79,7 @@ var OrderComponent = React.createClass({
 				<div className="checkout-wrapper">
           <span className="checkout-total-wrapper">
             <span className="checkout-total-label">total&#58; $ </span>
-            <span className="checkout-total">30.00</span>
+            <span className="checkout-total">{total}</span>
           </span>
           <div className="checkout-btn-wrapper">
   					<button className="subscribe-button checkout-btn">Cancel</button>
