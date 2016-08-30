@@ -11,7 +11,7 @@ require('backbone-react-component');
 
 
 // local
-
+var CompleteModal = require('./complete.jsx');
 
 
 var OrderComponent = React.createClass({
@@ -41,12 +41,21 @@ var OrderComponent = React.createClass({
 		orderedItems.remove(data);
 		this.setState({orderedItems: orderedItems});
 	},
-  
+  handleClear: function(e){
+    e.preventDefault();
+    var orderedItems = this.props.order;
+    orderedItems.reset();
+    this.setState({orderedItems: orderedItems});
+  },
   render: function(){
 
     var orderedItems = this.state.orderedItems;
 
     var prices = orderedItems.pluck('price');
+
+    var total = _.reduce(prices, function(a, b){
+      return a + b;
+    },0).toFixed(2);
 
     var orderedList = orderedItems.map(function(data){
 			var boundItemToClick = this.handleDelete.bind(this, data);
@@ -56,16 +65,10 @@ var OrderComponent = React.createClass({
           <h3 className="menu-item-title order-item-title">{data.get('item')}</h3>
           <button className="subscribe-button delete-btn" onClick={boundItemToClick}><i className="fa fa-times-circle" aria-hidden="true"></i>
 					</button>
-          <span className="order-item-price">{data.get('price')}</span>
+          <span className="order-item-price">{data.get('price').toFixed(2)}</span>
         </li>
       )
     }.bind(this));
-
-    var total = _.reduce(prices, function(a, b){
-      console.log('a', a);
-      console.log('b', b);
-      return a + b;
-    },0).toFixed(2);
 
     return (
       <div className="row order-outer">
@@ -81,7 +84,7 @@ var OrderComponent = React.createClass({
             <span className="checkout-total">{total}</span>
           </span>
           <div className="checkout-btn-wrapper">
-  					<button className="subscribe-button checkout-btn">Cancel</button>
+  					<button className="subscribe-button checkout-btn" onClick={this.handleClear}>Clear</button>
   					<button className="subscribe-button checkout-btn">Check Out</button>
           </div>
 				</div>

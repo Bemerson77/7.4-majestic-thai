@@ -6,12 +6,16 @@ var $ = require('jquery');
 
 
 var OrderModel = Backbone.Model.extend({
-  idAttribute: 'cid'
+  idAttribute: 'cid',
+  defaults: {
+		title: '',
+		price: ''
+	}
 });
 
 var OrderCollection = Backbone.Collection.extend({
   model: OrderModel
-  // url: 'http://tiny-lasagna-server.herokuapp.com/collections/brandonmenu'
+
 });
 
 

@@ -104,7 +104,7 @@ var AppetizerComponent = React.createClass({
             <button className="menu-add-btn subscribe-button" onClick={bindDataToClick}>Add</button>
           </div>
           <p className="menu-item-descript">{data.get('description')}</p>
-          <span className="menu-item-price">{data.get('price')}</span>
+          <span className="menu-item-price">{data.get('price').toFixed(2)}</span>
 
         </li>
       )
@@ -140,7 +140,7 @@ var EntreeComponent = React.createClass({
             <button className="menu-add-btn subscribe-button" onClick={bindDataToClick}>Add</button>
           </div>
           <p className="menu-item-descript">{data.get('description')}</p>
-          <span className="menu-item-price">{data.get('price')}</span>
+          <span className="menu-item-price">{data.get('price').toFixed(2)}</span>
 
         </li>
       )
@@ -176,8 +176,8 @@ var DessertComponent = React.createClass({
             <button className="menu-add-btn subscribe-button" onClick={bindDataToClick}>Add</button>
           </div>
           <p className="menu-item-descript">{data.get('description')}</p>
-          <span className="menu-item-price">{data.get('price')}</span>
-          
+          <span className="menu-item-price">{data.get('price').toFixed(2)}</span>
+
         </li>
       )
     }.bind(this));
