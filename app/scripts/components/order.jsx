@@ -11,14 +11,15 @@ require('backbone-react-component');
 
 
 // local
-var CompleteModal = require('./complete.jsx');
+var CompleteComponent = require('./complete.jsx');
 
 
 var OrderComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   getIntitialState: function(){
     return {
-      orderedItems: this.props.order
+      orderedItems: this.props.order,
+      showModal: false
     }
   },
   componentWillMount: function(){
@@ -46,6 +47,13 @@ var OrderComponent = React.createClass({
     var orderedItems = this.props.order;
     orderedItems.reset();
     this.setState({orderedItems: orderedItems});
+  },
+  close: function() {
+    this.setState({ showModal: false });
+  },
+
+  open: function() {
+    this.setState({ showModal: true });
   },
   render: function(){
 
@@ -85,9 +93,16 @@ var OrderComponent = React.createClass({
           </span>
           <div className="checkout-btn-wrapper">
   					<button className="subscribe-button checkout-btn" onClick={this.handleClear}>Clear</button>
-  					<button className="subscribe-button checkout-btn">Check Out</button>
+  					<button onClick={this.open} className="subscribe-button checkout-btn">Check Out</button>
           </div>
 				</div>
+        <CompleteComponent
+          orderedList={orderedList}
+          total={total}
+          close={this.close}
+          showModal={this.state.showModal}
+          handleClear={this.handleClear}
+        />
       </div>
     )
   }
