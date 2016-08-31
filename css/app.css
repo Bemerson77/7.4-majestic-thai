@@ -5961,4 +5961,10 @@ body {
   color: white;
   text-decoration: none; }
 
+.modal-content {
+  color: black; }
+
+.modal-total {
+  color: green; }
+
 /*# sourceMappingURL=app.css.map */
