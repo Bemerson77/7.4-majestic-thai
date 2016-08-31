@@ -19,7 +19,8 @@ var OrderComponent = React.createClass({
   getIntitialState: function(){
     return {
       orderedItems: this.props.order,
-      showModal: false
+      showModal: false,
+      total: 0
     }
   },
   componentWillMount: function(){
@@ -54,6 +55,17 @@ var OrderComponent = React.createClass({
 
   open: function() {
     this.setState({ showModal: true });
+    var prices = this.state.orderedItems.pluck('price');
+
+    var total = _.reduce(prices, function(a, b){
+      return a + b;
+    },0).toFixed(2);
+
+    this.setState({total: total});
+
+    var orderedItems = this.props.order;
+    orderedItems.reset();
+    this.setState({orderedItems: orderedItems});
   },
   render: function(){
 
@@ -97,8 +109,7 @@ var OrderComponent = React.createClass({
           </div>
 				</div>
         <CompleteComponent
-          orderedList={orderedList}
-          total={total}
+          total={this.state.total}
           close={this.close}
           showModal={this.state.showModal}
           handleClear={this.handleClear}

@@ -308,7 +308,10 @@ body {
 
 // Modal Styling
 
-.modal-text {
+.modal-content {
   color: black;
-  list-style: none;
+}
+
+.modal-total {
+  color: green;
 }

@@ -24,8 +24,9 @@ var CompleteComponent = React.createClass({
     return (
       <div>
         <Modal show={this.props.showModal} onHide={this.props.close}>
-          <ModalBody>
-            <h1 className="modal-text">total: &#36; {this.props.total}</h1>
+          <ModalBody className="modal-content">
+            <h1>Thank you for your order!</h1>
+            <h1 className="modal-text">Your total is: <span className="modal-total"> &#36; {this.props.total}</span></h1>
           </ModalBody>
           <Modal.Footer>
             <Button onClick={this.props.close}>Close</Button>
